@@ -1,4 +1,4 @@
-# storing assembly anmes in given directory in a text file
+# storing assembly names in given directory in a text file
 ls "${common_files}/all_student_assemblies/assemblies" > assembly_names.out
 
 # run genomead
