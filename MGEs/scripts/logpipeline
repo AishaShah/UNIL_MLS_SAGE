@@ -1,0 +1,20 @@
+# storing assembly anmes in given directory in a text file
+ls "${common_files}/all_student_assemblies/assemblies" > assembly_names.out
+
+# run genomead
+sbatch 01.00.identify_MGEs.sh
+# mereg files
+sbatch 02.00.summarizing_MGEs.sh
+
+
+# concatenating genome file
+username=ashah1
+indir=/scratch/jgianott/SAGE/SAGE_2023-2024/${username}/MGEs/01_genomad
+outfasta=/scratch/jgianott/SAGE/SAGE_2023-2024/${username}/MGEs/01_genomad/all_viruses.fasta
+cat ${indir}/*/*_summary/*_virus.fna > ${outfasta}
+
+
+
+# running for 411 genome
+ls "/scratch/jgianott/SAGE/SAGE_2023-2024/common_files/SAGE2_DB/SAGE2_fna" > assembly_names.411_genomes.out
+sed 's/\.fna$//' assembly_names.411_genomes.out 

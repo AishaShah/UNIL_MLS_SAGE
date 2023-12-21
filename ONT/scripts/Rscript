@@ -1,0 +1,106 @@
+---
+title: "ONT data analysis"
+output: html_notebook
+---
+
+
+```{r}
+#library(tidyverse)
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(patchwork)
+rawdata_readLength <- read_csv("/home/saisha/Desktop/unil_mount/ONT/01_Analysis/log/",  col_names = "read_length")  %>% arrange(., read_length)
+# arrange(., desc(read_length))
+```
+
+```{r}
+### REMOVE THIS
+print(paste0("Number of reads : ",nrow(rawdata_readLength)))
+print(paste0("Mean read length: ",mean(rawdata_readLength$read_length)))
+print(paste0("Max read length: ",max(rawdata_readLength$read_length)))
+print(paste0("Min read length: ",min(rawdata_readLength$read_length)))
+```
+```{r}
+number_reads <- nrow(rawdata_readLength)
+mean_read <- round(mean(rawdata_readLength$read_length),digits = 0)
+longest_read <- max(rawdata_readLength$read_length)
+
+print(paste0("The sample has ",number_reads, " reads. The mean read length is ",mean_read, " and the longest read is ",longest_read))
+```
+
+## Read distribution histogram
+## Calculating N50
+
+The N50 value is the length for which the cumulative size of all sequences of that length or longer represents at least 50% of the total size of all sequences.
+```{r}
+##-------------------------1. Histogram
+
+histoPlot_01 <- ggplot(rawdata_readLength,aes(x=read_length))+
+    geom_histogram(binwidth = 500)+theme_classic()+
+    geom_vline(xintercept = 5000,color="blue")+
+    lims(x=c(-250,longest_read))  +
+  annotate("text", x = 15500, y = Inf, vjust = 5, label = "rRNA length", color = "blue") 
+
+
+
+##-------------------------2. Here we calculate the which amount half of the sequencing output is 
+rawdata_readLength$Cumsum_forward <- cumsum(rawdata_readLength$read_length)
+rawdata_readLength$Cumsum_reverse <- max(rawdata_readLength$Cumsum_forward) - cumsum(rawdata_readLength$read_length)
+
+Half_sequencing_output <- max(rawdata_readLength$Cumsum_forward)/2
+
+print(paste0("The total number of sequenced bases is ",max(rawdata_readLength$Cumsum_forward)," and half of that is ",Half_sequencing_output))
+
+##-------------------------3. Here we plot the histogram and the cumulative summary
+
+cumSumPlot_01 <- ggplot(rawdata_readLength,aes(x=read_length,y=Cumsum_forward))+
+    geom_point()+theme_classic()+
+    geom_vline(xintercept = 5000,color="blue")+
+    geom_hline(yintercept = Half_sequencing_output,color="red")+
+    labs(y="Cummulative read length")+
+    lims(x=c(-250,longest_read))
+
+
+```
+
+
+
+
+```{r}
+ggplot(rawdata_readLength) + geom_boxplot(aes(y=read_length))
+
+ggplot(rawdata_readLength, aes(x = 1, y = read_length)) +
+    geom_jitter(alpha=0.03) +
+    geom_violin(alpha=0.5) 
+
+ggplot(rawdata_readLength) + geom_histogram(aes(x=read_length))
+ggplot(rawdata_readLength) + geom_density(aes(x=read_length))
+```
+
+# 3.6 Exercise: Read filtering calculations
+
+
+```{r}
+##-------------------------1. total sequenced bases
+bases_sequenced=max(rawdata_readLength$Cumsum_forward)
+print(paste0("The total number of sequenced bases is ",bases_sequenced))
+
+##-------------------------3. Here we calculate the which amount half of the sequencing output is 
+sample_name="strain_12" 
+genome_size= 2103190 #Expected by illumina assembly
+expected_genome_coverage=50
+bases_needed <- genome_size*expected_genome_coverage
+
+print(paste0("The total number of bases needed for ",expected_genome_coverage,"x coverage of a ",genome_size," bp genome are  ",bases_needed))
+```
+```{r, fig.width=9, fig.height=4}
+caption=paste0("The sample has ",number_reads, " reads. The mean read length is ",mean_read, " and the longest read is ",longest_read,
+               "\nThe total number of sequenced bases is ",max(rawdata_readLength$Cumsum_forward)," and half of that is ",Half_sequencing_output,
+               "\nExpected genome size (based on illumina assembly is ",genome_size)
+
+(histoPlot_01 | cumSumPlot_01) + 
+  plot_annotation(title="Read distribution for strain 12",
+                  caption=caption, 
+                  tag_levels = 'A') 
+```

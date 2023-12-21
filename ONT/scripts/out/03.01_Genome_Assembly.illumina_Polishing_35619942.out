@@ -1,0 +1,216 @@
+-------0. Priming the variables used
+-------0. Starting the for-loop
+----first round of pilon polishing
+-------1. First we map with bowtie2
+-------2. Second polish with pilon
+Pilon version 1.22 Wed Mar 15 16:38:30 2017 -0400
+Genome: /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_ONT/02_second_Racon_graphmap/assembly/strain_12_second_Racon_Assembly.fasta
+Fixing snps, indels, gaps, local
+Input genome size: 2123176
+Scanning BAMs
+/scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/bowtie2/first_pillon_ONT2FinalAssembly_sorted.bam: 711152 reads, 0 filtered, 709237 mapped, 481130 proper, 227598 stray, FR 99% 390+/-69, max 596
+Processing contig_3:1-34391
+Processing contig_4:1-19637
+Processing contig_2:1-4715
+Processing contig_1:1-2064433
+contig_4:1-19637 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/bowtie2/first_pillon_ONT2FinalAssembly_sorted.bam: coverage 91
+Total Reads: 11683, Coverage: 91, minDepth: 9
+Confirmed 19603 of 19637 bases (99.83%)
+Corrected 5 snps; 0 ambiguous bases; corrected 26 small insertions totaling 49 bases, 2 small deletions totaling 3 bases
+# Attempting to fix local continuity breaks
+Finished processing contig_4:1-19637
+contig_3:1-34391 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/bowtie2/first_pillon_ONT2FinalAssembly_sorted.bam: coverage 141
+Total Reads: 31448, Coverage: 141, minDepth: 14
+Confirmed 34259 of 34391 bases (99.62%)
+Corrected 12 snps; 0 ambiguous bases; corrected 34 small insertions totaling 60 bases, 9 small deletions totaling 85 bases
+# Attempting to fix local continuity breaks
+fix break: contig_3:6980-6984 6982 -29 +25 BreakFix
+# fix break: contig_3:21032-21039 0 -0 +0 NoSolution TandemRepeat 23
+fix break: contig_3:28558-28612 28563 -50 +0 BreakFix
+Finished processing contig_3:1-34391
+contig_2:1-4715 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/bowtie2/first_pillon_ONT2FinalAssembly_sorted.bam: coverage 1871
+Total Reads: 64036, Coverage: 1871, minDepth: 187
+Confirmed 4708 of 4715 bases (99.85%)
+Corrected 0 snps; 0 ambiguous bases; corrected 7 small insertions totaling 15 bases, 0 small deletions totaling 0 bases
+# Attempting to fix local continuity breaks
+Finished processing contig_2:1-4715
+contig_1:1-2064433 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/bowtie2/first_pillon_ONT2FinalAssembly_sorted.bam: coverage 44
+Total Reads: 602579, Coverage: 44, minDepth: 5
+Confirmed 2062816 of 2064433 bases (99.92%)
+Corrected 356 snps; 0 ambiguous bases; corrected 217 small insertions totaling 303 bases, 110 small deletions totaling 271 bases
+Large collapsed region: contig_1:1127353-1141868 size 14516
+Large collapsed region: contig_1:1153720-1177238 size 23519
+Large collapsed region: contig_1:1179943-1191928 size 11986
+# Attempting to fix local continuity breaks
+# fix break: contig_1:221816-221826 0 -0 +0 NoSolution
+# fix break: contig_1:414949 0 -0 +0 NoSolution TandemRepeat 1417
+# fix break: contig_1:653795-653841 0 -0 +0 NoSolution
+fix break: contig_1:804619-804626 804377 -158 +160 BreakFix
+# fix break: contig_1:1154410-1154766 0 -0 +0 NoSolution
+# fix break: contig_1:1218115-1218158 0 -0 +0 NoSolution
+# fix break: contig_1:1370913-1370925 0 -0 +0 NoSolution
+# fix break: contig_1:1408339 0 -0 +0 NoSolution TandemRepeat 1011
+# fix break: contig_1:1441572-1441624 0 -0 +0 NoSolution
+# fix break: contig_1:1587006-1587095 0 -0 +0 NoSolution
+# fix break: contig_1:1607082-1607122 0 -0 +0 NoSolution
+# fix break: contig_1:1827990-1828042 0 -0 +0 NoSolution
+# fix break: contig_1:1993788-1993791 0 -0 +0 NoSolution
+# fix break: contig_1:2029790-2029920 0 -0 +0 NoSolution
+fix break: contig_1:2046925-2046960 2046925 -36 +2 BreakFix
+fix break: contig_1:2048452-2048464 2048452 -13 +1 BreakFix
+fix break: contig_1:2048969-2048999 2048968 -32 +4 BreakFix
+fix break: contig_1:2051516-2051536 2051496 -41 +26 BreakFix
+fix break: contig_1:2052948-2052965 2052948 -18 +2 BreakFix
+fix break: contig_1:2053932-2053945 2053949 -15 +0 BreakFix
+fix break: contig_1:2055923-2055934 2055923 -12 +5 BreakFix
+fix break: contig_1:2057388-2057459 2057402 -17 +1 BreakFix
+fix break: contig_1:2063106-2063198 2062939 -499 +491 BreakFix
+Finished processing contig_1:1-2064433
+Writing contig_1:1-2064433 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.changes
+Writing updated contig_1_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.fasta
+Writing contig_2:1-4715 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.changes
+Writing updated contig_2_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.fasta
+Writing contig_3:1-34391 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.changes
+Writing updated contig_3_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.fasta
+Writing contig_4:1-19637 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.changes
+Writing updated contig_4_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.fasta
+Mean frags coverage: 50
+Mean total coverage: 50
+-------3. Resetting the parameters
+/scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.fasta
+----second round of pilon polishing
+-------1. First we map with bowtie2
+-------2. Second polish with pilon
+Pilon version 1.22 Wed Mar 15 16:38:30 2017 -0400
+Genome: /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.fasta
+Fixing snps, indels, gaps, local
+Input genome size: 2123235
+Scanning BAMs
+/scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/bowtie2/second_pillon_ONT2FinalAssembly_sorted.bam: 711152 reads, 0 filtered, 709246 mapped, 480698 proper, 228038 stray, FR 99% 390+/-69, max 596
+Processing contig_4_pilon:1-19683
+Processing contig_3_pilon:1-34368
+Processing contig_1_pilon:1-2064454
+Processing contig_2_pilon:1-4730
+contig_4_pilon:1-19683 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/bowtie2/second_pillon_ONT2FinalAssembly_sorted.bam: coverage 90
+Total Reads: 11683, Coverage: 90, minDepth: 9
+Confirmed 19681 of 19683 bases (99.99%)
+Corrected 2 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+Finished processing contig_4_pilon:1-19683
+contig_3_pilon:1-34368 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/bowtie2/second_pillon_ONT2FinalAssembly_sorted.bam: coverage 141
+Total Reads: 31448, Coverage: 141, minDepth: 14
+Confirmed 34364 of 34368 bases (99.99%)
+Corrected 1 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 1 small deletions totaling 2 bases
+# Attempting to fix local continuity breaks
+Finished processing contig_3_pilon:1-34368
+contig_2_pilon:1-4730 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/bowtie2/second_pillon_ONT2FinalAssembly_sorted.bam: coverage 1856
+Total Reads: 64034, Coverage: 1856, minDepth: 186
+Confirmed 4730 of 4730 bases (100.00%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+# Attempting to fix local continuity breaks
+Finished processing contig_2_pilon:1-4730
+contig_1_pilon:1-2064454 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/bowtie2/second_pillon_ONT2FinalAssembly_sorted.bam: coverage 44
+Total Reads: 602591, Coverage: 44, minDepth: 5
+Confirmed 2063673 of 2064454 bases (99.96%)
+Corrected 3 snps; 0 ambiguous bases; corrected 1 small insertions totaling 15 bases, 3 small deletions totaling 4 bases
+Large collapsed region: contig_1_pilon:1127423-1141939 size 14517
+Large collapsed region: contig_1_pilon:1153791-1177312 size 23522
+Large collapsed region: contig_1_pilon:1180017-1192002 size 11986
+# Attempting to fix local continuity breaks
+# fix break: contig_1_pilon:414981 0 -0 +0 NoSolution TandemRepeat 1417
+# fix break: contig_1_pilon:653836-653882 0 -0 +0 NoSolution
+fix break: contig_1_pilon:804668-804675 804423 -160 +158 BreakFix
+# fix break: contig_1_pilon:1154481-1154837 0 -0 +0 NoSolution
+# fix break: contig_1_pilon:1218190-1218233 0 -0 +0 NoSolution
+# fix break: contig_1_pilon:1370996-1371008 0 -0 +0 NoSolution
+# fix break: contig_1_pilon:1408424 0 -0 +0 NoSolution TandemRepeat 1011
+# fix break: contig_1_pilon:1441659-1441711 0 -0 +0 NoSolution
+# fix break: contig_1_pilon:1587105-1587194 0 -0 +0 NoSolution
+# fix break: contig_1_pilon:1607181-1607221 0 -0 +0 NoSolution
+# fix break: contig_1_pilon:1828102-1828154 0 -0 +0 NoSolution
+fix break: contig_1_pilon:2054006 2054010 -0 +15 BreakFix
+Finished processing contig_1_pilon:1-2064454
+Writing contig_1_pilon:1-2064454 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.changes
+Writing updated contig_1_pilon_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.fasta
+Writing contig_2_pilon:1-4730 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.changes
+Writing updated contig_2_pilon_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.fasta
+Writing contig_3_pilon:1-34368 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.changes
+Writing updated contig_3_pilon_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.fasta
+Writing contig_4_pilon:1-19683 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.changes
+Writing updated contig_4_pilon_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.fasta
+Mean frags coverage: 50
+Mean total coverage: 50
+-------3. Resetting the parameters
+/scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.fasta
+----third round of pilon polishing
+-------1. First we map with bowtie2
+-------2. Second polish with pilon
+Pilon version 1.22 Wed Mar 15 16:38:30 2017 -0400
+Genome: /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.fasta
+Fixing snps, indels, gaps, local
+Input genome size: 2123258
+Scanning BAMs
+/scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/bowtie2/third_pillon_ONT2FinalAssembly_sorted.bam: 711152 reads, 0 filtered, 709246 mapped, 480688 proper, 228048 stray, FR 99% 390+/-69, max 596
+Processing contig_3_pilon_pilon:1-34366
+Processing contig_4_pilon_pilon:1-19683
+Processing contig_1_pilon_pilon:1-2064479
+Processing contig_2_pilon_pilon:1-4730
+contig_4_pilon_pilon:1-19683 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/bowtie2/third_pillon_ONT2FinalAssembly_sorted.bam: coverage 90
+Total Reads: 11683, Coverage: 90, minDepth: 9
+Confirmed 19683 of 19683 bases (100.00%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+Finished processing contig_4_pilon_pilon:1-19683
+contig_3_pilon_pilon:1-34366 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/bowtie2/third_pillon_ONT2FinalAssembly_sorted.bam: coverage 141
+Total Reads: 31448, Coverage: 141, minDepth: 14
+Confirmed 34365 of 34366 bases (100.00%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+Finished processing contig_3_pilon_pilon:1-34366
+contig_2_pilon_pilon:1-4730 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/bowtie2/third_pillon_ONT2FinalAssembly_sorted.bam: coverage 1856
+Total Reads: 64034, Coverage: 1856, minDepth: 186
+Confirmed 4730 of 4730 bases (100.00%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+# Attempting to fix local continuity breaks
+Finished processing contig_2_pilon_pilon:1-4730
+contig_1_pilon_pilon:1-2064479 log:
+frags /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/bowtie2/third_pillon_ONT2FinalAssembly_sorted.bam: coverage 44
+Total Reads: 602591, Coverage: 44, minDepth: 5
+Confirmed 2063690 of 2064479 bases (99.96%)
+Corrected 0 snps; 0 ambiguous bases; corrected 1 small insertions totaling 1 bases, 1 small deletions totaling 15 bases
+Large collapsed region: contig_1_pilon_pilon:1127420-1141936 size 14517
+Large collapsed region: contig_1_pilon_pilon:1153788-1177309 size 23522
+Large collapsed region: contig_1_pilon_pilon:1180014-1191999 size 11986
+# Attempting to fix local continuity breaks
+# fix break: contig_1_pilon_pilon:414981 0 -0 +0 NoSolution TandemRepeat 1417
+# fix break: contig_1_pilon_pilon:653836-653882 0 -0 +0 NoSolution
+# fix break: contig_1_pilon_pilon:1154478-1154834 0 -0 +0 NoSolution
+# fix break: contig_1_pilon_pilon:1218187-1218230 0 -0 +0 NoSolution
+# fix break: contig_1_pilon_pilon:1370993-1371005 0 -0 +0 NoSolution
+# fix break: contig_1_pilon_pilon:1408421 0 -0 +0 NoSolution TandemRepeat 1011
+# fix break: contig_1_pilon_pilon:1441656-1441708 0 -0 +0 NoSolution
+# fix break: contig_1_pilon_pilon:1587102-1587191 0 -0 +0 NoSolution
+# fix break: contig_1_pilon_pilon:1607178-1607218 0 -0 +0 NoSolution
+# fix break: contig_1_pilon_pilon:1828099-1828151 0 -0 +0 NoSolution
+fix break: contig_1_pilon_pilon:2054005-2054018 2054022 -15 +0 BreakFix
+Finished processing contig_1_pilon_pilon:1-2064479
+Writing contig_1_pilon_pilon:1-2064479 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.changes
+Writing updated contig_1_pilon_pilon_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.fasta
+Writing contig_2_pilon_pilon:1-4730 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.changes
+Writing updated contig_2_pilon_pilon_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.fasta
+Writing contig_3_pilon_pilon:1-34366 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.changes
+Writing updated contig_3_pilon_pilon_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.fasta
+Writing contig_4_pilon_pilon:1-19683 changes to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.changes
+Writing updated contig_4_pilon_pilon_pilon to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.fasta
+Mean frags coverage: 50
+Mean total coverage: 50
+-------3. Resetting the parameters
+/scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.fasta

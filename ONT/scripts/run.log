@@ -1,0 +1,6 @@
+[Thu, 30 Nov 23 08:15:26 +0000 FATAL] #2: Could not open file. File path: '/scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_ONT//01_first_Racon_graphmap/Graphmap_ONT/first_Racon_ONT2FinalAssembly_sorted.sam'. In function: 'OpenOutSAMFile_'.
+
+[Thu, 30 Nov 23 08:16:32 +0000 FATAL] #2: Could not open file. File path: '/scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_ONT/01_first_Racon_graphmap/Graphmap_ONT/first_Racon_ONT2FinalAssembly_sorted.sam'. In function: 'OpenOutSAMFile_'.
+
+[Thu, 30 Nov 23 08:19:42 +0000 FATAL] #2: Could not open file. File path: '/scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_ONT/01_first_Racon_graphmap/Graphmap_ONT/first_Racon_ONT2FinalAssembly_sorted.sam'. In function: 'OpenOutSAMFile_'.
+

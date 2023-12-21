@@ -1,0 +1,144 @@
+#################################################
+## 00.01: Downloading data                     ##
+#################################################
+
+
+
+#################################################
+## 00.02: Extracting data                      ##
+#################################################
+cd ${personal_home_dir}/rawReads/
+tar -xzvf ${sample_name}.tar.gz -C .
+
+####################################################
+## 00.03: ONT data transformation (Fast5 to fastq) ##
+####################################################
+Base Caller: Guppy 3.4 implemented on GridION
+
+
+#################################################
+## 00.04: Demultiplexing                       ##
+#################################################
+
+
+#################################################
+## 00.05: Data location                        ##
+#################################################
+data_path=/scratch/jgianott/SAGE/SAGE_2023-2024/common_files/raw_ONT_data
+strain_id=strain_12
+less ${data_path}/${strain_id}.fastq.gz
+zgrep -c "@" ${data_path}/${strain_id}.fastq.gz
+# 318339
+
+#################################################
+## 00.06: Copy Data                            ##
+#################################################
+sbatch 00.01_CopyFiles.sh
+
+#################################################
+## 01.00: Raw Read Analysis                    ##
+#################################################
+Get rawRead lengths and plot distributions
+00.02_readLength_rawReads.sh
+
+
+#################################################
+## 01.01: Read Filtering calculations          ##
+#################################################
+
+inpath=/home/saisha/Desktop/unil_mount/ONT/01_Analysis/log
+
+Rscript plot_read_length.R \
+-i ${inpath}/strain_12_raw_readLength.txt \
+-o ${inpath} -n strain_12_raw_readLength.png \
+-t "Raw Reads"
+
+
+#################################################
+## 01.02: Read Filtering by filtlong           ##
+#################################################
+
+sbatch 01.00_filtlong.sh
+Rscript plot_read_length.R \
+-i ${inpath}/strain_12_filtered_readLength.txt \
+-o ${inpath} -n strain_12_filtered_readLength.png \
+-t "Filtered Reads"
+
+
+zgrep -c 'runid' <strain_xx>.fastq.gz
+# 160428
+zgrep -c 'runid' <strain_xx>_filtered.fastq
+
+# 77425
+
+############# MISSING ###############################
+#
+#
+#
+#
+
+
+
+###########################################################
+#   Quality CHECK of Final assembly polished by illumina ##
+###########################################################
+
+cp /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.fasta /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/00_polished_genome/strain_12_polished_contigs.fasta
+
+## sbatch 04*
+## sbatch 05*
+
+oufolder of 05:
+# Total genes:
+awk '!/^#/{print $3}' genes.gff | sort | wc -l
+1968
+
+# coding and non coding Genes per contig
+awk '!/^#/{print $3, $1}' genes.gff | sort | uniq -c
+   1830 CDS strain_12_polished_contigs_contig_1_pilon_pilon_pilon
+     10 CDS strain_12_polished_contigs_contig_2_pilon_pilon_pilon
+     37 CDS strain_12_polished_contigs_contig_3_pilon_pilon_pilon
+     24 CDS strain_12_polished_contigs_contig_4_pilon_pilon_pilon
+     12 rRNA strain_12_polished_contigs_contig_1_pilon_pilon_pilon
+     55 tRNA strain_12_polished_contigs_contig_1_pilon_pilon_pilon
+
+# coding and non coding genes in all contigs
+awk '!/^#/{print $3}' genes.gff | sort | uniq -c
+   1901 CDS
+     12 rRNA
+     55 tRNA
+
+# rrnas
+awk '{print $6}' rrnas.tsv  | sort | uniq -c | grep -v "type"
+      4 16S
+      4 23S
+      4 5S
+# distince tRNAs
+awk '{print $6}' trnas.tsv  | sort | uniq -c | grep -v "type" | wc -l
+21
+
+# checking lengths of rRNA to be sure that they are complete and not partial
+awk -F'\t' 'NR > 1 {print $4-$3 " " $6}' rrnas.tsv | sort -k2,2
+1483 16S rRNA
+1483 16S rRNA
+1483 16S rRNA
+1483 16S rRNA
+2720 23S rRNA
+2721 23S rRNA
+2721 23S rRNA
+2721 23S rRNA
+108 5S rRNA
+108 5S rRNA
+108 5S rRNA
+108 5S rRNA
+
+
+# exploring region of interest that had exceptionally higher coverage
+head -n 1 annotations.tsv > genes_in_exceptionally_high_cov_region.tsv
+awk '$5 > 1115001 && $6 < 1199999' annotations.tsv >> genes_in_exceptionally_high_cov_region.tsv
+
+
+
+
+
+

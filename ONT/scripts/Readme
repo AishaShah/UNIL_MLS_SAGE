@@ -1,0 +1,6 @@
+- Sequencing Platform: GridION
+- How was data downloaded?
+- ONT data transformation (Fast5 to fastq)
+  Base Caller: Guppy 3.4 implemented on GridION
+- Demultiplexing
+

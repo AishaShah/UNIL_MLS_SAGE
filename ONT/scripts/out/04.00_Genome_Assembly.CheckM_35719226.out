@@ -1,0 +1,90 @@
+-------0. Priming the variables used
+-------1. First run CheckM
+[2023-12-05 09:00:47] INFO: CheckM v1.2.2
+[2023-12-05 09:00:47] INFO: checkm data setRoot /scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/checkM/checkM_data
+[2023-12-05 09:00:47] INFO: CheckM data: /scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/checkM/checkM_data
+[2023-12-05 09:00:47] INFO: [CheckM - data] Check for database updates. [setRoot]
+
+Path [/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/checkM/checkM_data] exists and you have permission to write to this folder.
+(re) creating manifest file (please be patient).
+
+Path [/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/checkM/checkM_data] exists and you have permission to write to this folder.
+(re) creating manifest file (please be patient).
+[2023-12-05 09:00:52] INFO: CheckM v1.2.2
+[2023-12-05 09:00:52] INFO: checkm lineage_wf /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/00_polished_genome /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC -x fasta -t 16
+[2023-12-05 09:00:52] INFO: CheckM data: /scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/checkM/checkM_data
+[2023-12-05 09:00:52] INFO: [CheckM - tree] Placing bins in reference genome tree.
+[2023-12-05 09:00:52] INFO: Identifying marker genes in 1 bins with 16 threads:
+[2023-12-05 09:00:57] INFO: Saving HMM info to file.
+[2023-12-05 09:00:57] INFO: Calculating genome statistics for 1 bins with 16 threads:
+[2023-12-05 09:00:58] INFO: Extracting marker genes to align.
+[2023-12-05 09:00:58] INFO: Parsing HMM hits to marker genes:
+[2023-12-05 09:00:58] INFO: Extracting 43 HMMs with 16 threads:
+[2023-12-05 09:00:58] INFO: Aligning 43 marker genes with 16 threads:
+[2023-12-05 09:00:58] INFO: Reading marker alignment files.
+[2023-12-05 09:00:58] INFO: Concatenating alignments.
+[2023-12-05 09:00:58] INFO: Placing 1 bins into the genome tree with pplacer (be patient).
+[2023-12-05 09:03:44] INFO: { Current stage: 0:02:52.102 || Total: 0:02:52.102 }
+[2023-12-05 09:03:44] INFO: [CheckM - lineage_set] Inferring lineage-specific marker sets.
+[2023-12-05 09:03:44] INFO: Reading HMM info from file.
+[2023-12-05 09:03:44] INFO: Parsing HMM hits to marker genes:
+[2023-12-05 09:03:44] INFO: Determining marker sets for each genome bin.
+[2023-12-05 09:03:45] INFO: Marker set written to: /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/lineage.ms
+[2023-12-05 09:03:45] INFO: { Current stage: 0:00:00.557 || Total: 0:02:52.660 }
+[2023-12-05 09:03:45] INFO: [CheckM - analyze] Identifying marker genes in bins.
+[2023-12-05 09:03:45] INFO: Identifying marker genes in 1 bins with 16 threads:
+[2023-12-05 09:04:32] INFO: Saving HMM info to file.
+[2023-12-05 09:04:32] INFO: { Current stage: 0:00:47.436 || Total: 0:03:40.096 }
+[2023-12-05 09:04:32] INFO: Parsing HMM hits to marker genes:
+[2023-12-05 09:04:32] INFO: Aligning marker genes with multiple hits in a single bin:
+[2023-12-05 09:04:32] INFO: { Current stage: 0:00:00.239 || Total: 0:03:40.336 }
+[2023-12-05 09:04:32] INFO: Calculating genome statistics for 1 bins with 16 threads:
+[2023-12-05 09:04:32] INFO: { Current stage: 0:00:00.061 || Total: 0:03:40.397 }
+[2023-12-05 09:04:32] INFO: [CheckM - qa] Tabulating genome statistics.
+[2023-12-05 09:04:32] INFO: Calculating AAI between multi-copy marker genes.
+[2023-12-05 09:04:32] INFO: Reading HMM info from file.
+[2023-12-05 09:04:32] INFO: Parsing HMM hits to marker genes:
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Bin Id                               Marker lineage          # genomes   # markers   # marker sets   0    1    2   3   4   5+   Completeness   Contamination   Strain heterogeneity  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  strain_12_polished_contigs   o__Rhodospirillales (UID3754)       63         336           201        2   334   0   0   0   0       99.25            0.00               0.00          
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[2023-12-05 09:04:33] INFO: { Current stage: 0:00:00.148 || Total: 0:03:40.546 }
+[2023-12-05 09:04:33] INFO: CheckM v1.2.2
+[2023-12-05 09:04:33] INFO: checkm qa /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/lineage.ms /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC -o 2 -f /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/strain_12_checkm_polished_QC_stats.tsv --tab_table
+[2023-12-05 09:04:33] INFO: CheckM data: /scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/checkM/checkM_data
+[2023-12-05 09:04:33] INFO: [CheckM - qa] Tabulating genome statistics.
+[2023-12-05 09:04:33] INFO: Calculating AAI between multi-copy marker genes.
+[2023-12-05 09:04:33] INFO: Reading HMM info from file.
+[2023-12-05 09:04:33] INFO: Parsing HMM hits to marker genes:
+[2023-12-05 09:04:33] INFO: QA information written to: /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/strain_12_checkm_polished_QC_stats.tsv
+[2023-12-05 09:04:33] INFO: { Current stage: 0:00:00.135 || Total: 0:00:00.135 }
+[2023-12-05 09:04:34] INFO: CheckM v1.2.2
+[2023-12-05 09:04:34] INFO: checkm marker_plot /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/00_polished_genome /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/plots -x fasta
+[2023-12-05 09:04:34] INFO: CheckM data: /scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/checkM/checkM_data
+[2023-12-05 09:04:34] INFO: [CheckM - marker_plot] Creating marker gene position plot.
+[2023-12-05 09:04:34] INFO: Plotting marker gene position plot for strain_12_polished_contigs (1 of 1)
+[2023-12-05 09:04:34] INFO: Markers reside on 1 of 4 sequences which span 2.06 of 2.12 (97.2%) Mb
+[2023-12-05 09:04:34] INFO: Plot written to: /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/plots/strain_12_polished_contigs.marker_pos_plot.png
+[2023-12-05 09:04:34] INFO: { Current stage: 0:00:00.318 || Total: 0:00:00.318 }
+[2023-12-05 09:04:34] INFO: CheckM v1.2.2
+[2023-12-05 09:04:34] INFO: checkm gc_plot /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/00_polished_genome /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/plots 95 -x fasta
+[2023-12-05 09:04:34] INFO: CheckM data: /scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/checkM/checkM_data
+[2023-12-05 09:04:34] INFO: [CheckM - gc_plot] Creating GC histogram and delta-GC plot.
+[2023-12-05 09:04:34] INFO: Plotting GC plots for /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/00_polished_genome/strain_12_polished_contigs.fasta (1 of 1)
+[2023-12-05 09:04:38] INFO: Plot written to: /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/plots/strain_12_polished_contigs.gc_plots.png
+[2023-12-05 09:04:38] INFO: { Current stage: 0:00:03.349 || Total: 0:00:03.349 }
+[2023-12-05 09:04:38] INFO: CheckM v1.2.2
+[2023-12-05 09:04:38] INFO: checkm coding_plot /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/00_polished_genome /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/plots 95 -x fasta
+[2023-12-05 09:04:38] INFO: CheckM data: /scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/checkM/checkM_data
+[2023-12-05 09:04:38] INFO: [CheckM - coding_plot] Creating coding density histogram and delta-CD plot.
+[2023-12-05 09:04:38] INFO: Plotting coding density plots for /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/00_polished_genome/strain_12_polished_contigs.fasta (1 of 1)
+[2023-12-05 09:04:40] INFO: Plot written to: /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/plots/strain_12_polished_contigs.coding_density_plots.png
+[2023-12-05 09:04:40] INFO: { Current stage: 0:00:01.861 || Total: 0:00:01.861 }
+[2023-12-05 09:04:40] INFO: CheckM v1.2.2
+[2023-12-05 09:04:40] INFO: checkm nx_plot /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/00_polished_genome /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/plots -x fasta
+[2023-12-05 09:04:40] INFO: CheckM data: /scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/checkM/checkM_data
+[2023-12-05 09:04:40] INFO: [CheckM - nx_plot] Creating Nx-plots.
+[2023-12-05 09:04:40] INFO: Plotting Nx-plot for strain_12_polished_contigs (1 of 1)
+[2023-12-05 09:04:41] INFO: Plot written to: /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_checkm_polished_QC/plots/strain_12_polished_contigs.nx_plot.png
+[2023-12-05 09:04:41] INFO: { Current stage: 0:00:00.675 || Total: 0:00:00.675 }

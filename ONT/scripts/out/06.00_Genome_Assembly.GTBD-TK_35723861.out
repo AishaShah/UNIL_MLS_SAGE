@@ -1,0 +1,34 @@
+-------0. Priming the variables used
+-------1. First run GTBD
+[2023-12-05 13:13:40] INFO: GTDB-Tk v2.1.1
+[2023-12-05 13:13:40] INFO: gtdbtk classify_wf --genome_dir /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/00_polished_genome --out_dir /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/03_Genome_QC_and_annotation/01_strain_12_GTBD_polished_QC --extension fasta --cpus 16
+[2023-12-05 13:13:40] INFO: Using GTDB-Tk reference data version r214: /scratch/jgianott/SAGE/SAGE_2023-2024/common_files/gtdb_database/release214/
+[2023-12-05 13:13:40] INFO: Identifying markers in 1 genomes with 16 threads.
+[2023-12-05 13:13:40] TASK: Running Prodigal V2.6.3 to identify genes.
+[2023-12-05 13:13:44] ERROR: Controlled exit resulting from an unrecoverable error or warning.
+
+================================================================================
+EXCEPTION: ProdigalException
+  MESSAGE: An exception was caught while running Prodigal: Prodigal returned a non-zero exit code.
+________________________________________________________________________________
+
+Traceback (most recent call last):
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/external/prodigal.py", line 211, in run
+    raise ProdigalException('Prodigal returned a non-zero exit code.')
+gtdbtk.exceptions.ProdigalException: Prodigal returned a non-zero exit code.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/__main__.py", line 98, in main
+    gt_parser.parse_options(args)
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/main.py", line 816, in parse_options
+    self.identify(options)
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/main.py", line 271, in identify
+    markers.identify(genomes,
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/markers.py", line 203, in identify
+    genome_dictionary = prodigal.run(genomes, tln_tables)
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/external/prodigal.py", line 220, in run
+    raise ProdigalException(f'An exception was caught while running Prodigal: {e}')
+gtdbtk.exceptions.ProdigalException: An exception was caught while running Prodigal: Prodigal returned a non-zero exit code.
+================================================================================

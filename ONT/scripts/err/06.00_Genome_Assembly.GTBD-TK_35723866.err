@@ -1,0 +1,33 @@
+==> Processed 0/1 genomes (0%) |               | [?genome/s, ETA ?]/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/biolib_lite/prodigal_biolib.py:378: FutureWarning: In the future `np.bool` will be defined as the corresponding NumPy scalar.
+  coding_base_mask = np.zeros(self.last_coding_base[seq_id], dtype=np.bool)
+Process Process-2:1:1:
+Traceback (most recent call last):
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/biolib_lite/parallel.py", line 107, in __producer
+    rtn = producer_callback(dataItem)
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/biolib_lite/prodigal_biolib.py", line 147, in _producer
+    prodigalParser = ProdigalGeneFeatureParser(gff_file_tmp)
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/biolib_lite/prodigal_biolib.py", line 322, in __init__
+    self.coding_base_masks[seq_id] = self.__build_coding_base_mask(
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/biolib_lite/prodigal_biolib.py", line 378, in __build_coding_base_mask
+    coding_base_mask = np.zeros(self.last_coding_base[seq_id], dtype=np.bool)
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/numpy/__init__.py", line 305, in __getattr__
+    raise AttributeError(__former_attrs__[attr])
+AttributeError: module 'numpy' has no attribute 'bool'.
+`np.bool` was a deprecated alias for the builtin `bool`. To avoid this error in existing code, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+Process Process-2:
+Traceback (most recent call last):
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/external/prodigal.py", line 143, in _worker
+    rtn_files = self._run_prodigal(genome_id, file_path, usr_tln_table)
+  File "/scratch/jgianott/SAGE/SAGE_2023-2024/dgarrido/GTDB-Tk/GTDB_env/lib/python3.8/site-packages/gtdbtk/external/prodigal.py", line 109, in _run_prodigal
+    raise Exception("An error was encountered while running Prodigal.")
+Exception: An error was encountered while running Prodigal.

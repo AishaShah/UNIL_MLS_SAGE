@@ -1,0 +1,150 @@
+-------0. Priming the variables used
+-------1. First run Quast
+/software/UHTS/Quality_control/quast/4.6.0/quast.py -l FlyeAssembly,first_ONT_racon,second_ONT_racon,first_Illumina_pilon,second_Illumina_pilon -R /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.fasta /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/assembly.fasta /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_ONT/01_first_Racon_graphmap/assembly/strain_12_first_Racon_Assembly.fasta /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_ONT/02_second_Racon_graphmap/assembly/strain_12_second_Racon_Assembly.fasta /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.fasta /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.fasta -o /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/
+
+Version: 4.6.0, 22f3f69
+
+System information:
+  OS: Linux-4.18.0-305.49.1.el8_4.x86_64-x86_64-with-redhat-8.4-Ootpa (linux_64)
+  Python version: 3.6.8
+  CPUs number: 48
+
+Started: 2023-11-30 10:38:26
+
+Logging to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/quast.log
+NOTICE: Output directory already exists. Existing Nucmer alignments can be used
+NOTICE: Maximum number of threads is set to 12 (use --threads option to set it manually)
+
+CWD: /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/scripts
+Main parameters: 
+  Threads: 12, minimum contig length: 500, ambiguity: one, threshold for extensive misassembly size: 1000
+
+WARNING: Can't draw plots: python-matplotlib is missing or corrupted.
+
+Reference:
+  /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/05_third_pillon_bowtie2/assembly/strain_12_third_Pilon_Assembly.fasta ==> strain_12_third_Pilon_Assembly
+
+Contigs:
+  Pre-processing...
+  1  /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/assembly.fasta ==> FlyeAssembly
+  2  /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_ONT/01_first_Racon_graphmap/assembly/strain_12_first_Racon_Assembly.fasta ==> first_ONT_racon
+  3  /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_ONT/02_second_Racon_graphmap/assembly/strain_12_second_Racon_Assembly.fasta ==> second_ONT_racon
+  4  /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/03_first_pillon_bowtie2/assembly/strain_12_first_Pilon_Assembly.fasta ==> first_Illumina_pilon
+  5  /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/02_assembly_ONT/Polishing_Illumina/04_second_pillon_bowtie2/assembly/strain_12_second_Pilon_Assembly.fasta ==> second_Illumina_pilon
+
+2023-11-30 10:38:26
+Running Basic statistics processor...
+  Reference genome:
+    strain_12_third_Pilon_Assembly.fasta, length = 2123229, num fragments = 4, GC % = 49.37
+  Contig files: 
+    1  FlyeAssembly
+    2  first_ONT_racon
+    3  second_ONT_racon
+    4  first_Illumina_pilon
+    5  second_Illumina_pilon
+  Calculating N50 and L50...
+    1  FlyeAssembly, N50 = 2079695, L50 = 1, Total length = 2139010, GC % = 49.33, # N's per 100 kbp =  0.00
+    2  first_ONT_racon, N50 = 2064498, L50 = 1, Total length = 2123241, GC % = 49.35, # N's per 100 kbp =  0.00
+    3  second_ONT_racon, N50 = 2064433, L50 = 1, Total length = 2123176, GC % = 49.35, # N's per 100 kbp =  0.00
+    4  first_Illumina_pilon, N50 = 2064454, L50 = 1, Total length = 2123235, GC % = 49.37, # N's per 100 kbp =  0.00
+    5  second_Illumina_pilon, N50 = 2064479, L50 = 1, Total length = 2123258, GC % = 49.37, # N's per 100 kbp =  0.00
+Done.
+
+2023-11-30 10:38:26
+Running Contig analyzer...
+NOTICE: Previous try of E-MEM compilation was unsuccessful! For forced retrying, please remove /software/UHTS/Quality_control/quast/4.6.0/quast_libs/MUMmer/make.emem.failed and restart QUAST. Currently, QUAST will use Nucmer which is absolutely fine, albeit slower.
+  1  FlyeAssembly
+  2  first_ONT_racon
+  4  first_Illumina_pilon
+  3  second_ONT_racon
+  5  second_Illumina_pilon
+  1  Logging to files /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/contigs_report_FlyeAssembly.stdout and contigs_report_FlyeAssembly.stderr...
+  2  Logging to files /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/contigs_report_first_ONT_racon.stdout and contigs_report_first_ONT_racon.stderr...
+  3  Logging to files /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/contigs_report_second_ONT_racon.stdout and contigs_report_second_ONT_racon.stderr...
+  4  Logging to files /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/contigs_report_first_Illumina_pilon.stdout and contigs_report_first_Illumina_pilon.stderr...
+  5  Logging to files /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/contigs_report_second_Illumina_pilon.stdout and contigs_report_second_Illumina_pilon.stderr...
+  1  Aligning contigs to the reference
+  2  Aligning contigs to the reference
+  4  Aligning contigs to the reference
+  3  Aligning contigs to the reference
+  5  Aligning contigs to the reference
+NOTICE: 1   MUMmer plot cannot be created.
+
+NOTICE: 4   MUMmer plot cannot be created.
+
+NOTICE: 3   MUMmer plot cannot be created.
+
+NOTICE: 2   MUMmer plot cannot be created.
+
+NOTICE: 5   MUMmer plot cannot be created.
+
+  5  Analysis is finished.
+  Gzipping /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/nucmer_output/second_Illumina_pilon.all_snps to reduce disk space usage...
+    saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/nucmer_output/second_Illumina_pilon.all_snps.gz
+  4  Analysis is finished.
+  Gzipping /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/nucmer_output/first_Illumina_pilon.all_snps to reduce disk space usage...
+    saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/nucmer_output/first_Illumina_pilon.all_snps.gz
+  3  Analysis is finished.
+  Gzipping /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/nucmer_output/second_ONT_racon.all_snps to reduce disk space usage...
+    saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/nucmer_output/second_ONT_racon.all_snps.gz
+  2  Analysis is finished.
+  Gzipping /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/nucmer_output/first_ONT_racon.all_snps to reduce disk space usage...
+    saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/nucmer_output/first_ONT_racon.all_snps.gz
+  1  Analysis is finished.
+  Gzipping /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/nucmer_output/FlyeAssembly.all_snps to reduce disk space usage...
+    saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/nucmer_output/FlyeAssembly.all_snps.gz
+  Creating total report...
+    saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+Done.
+
+2023-11-30 10:38:30
+Running NA-NGA calculation...
+  1  FlyeAssembly, Largest alignment = 2079692, NA50 = 2079692, NGA50 = 2079692, LA50 = 1, LGA50 = 1
+  2  first_ONT_racon, Largest alignment = 2064495, NA50 = 2064495, NGA50 = 2064495, LA50 = 1, LGA50 = 1
+  3  second_ONT_racon, Largest alignment = 2064433, NA50 = 2064433, NGA50 = 2064433, LA50 = 1, LGA50 = 1
+  4  first_Illumina_pilon, Largest alignment = 2064454, NA50 = 2064454, NGA50 = 2064454, LA50 = 1, LGA50 = 1
+  5  second_Illumina_pilon, Largest alignment = 2064005, NA50 = 2064005, NGA50 = 2064005, LA50 = 1, LGA50 = 1
+Done.
+
+2023-11-30 10:38:30
+Running Genome analyzer...
+  NOTICE: No file with genes provided. Use the -G option if you want to specify it.
+  NOTICE: No file with operons provided. Use the -O option if you want to specify it.
+  1  FlyeAssembly
+  4  first_Illumina_pilon
+  3  second_ONT_racon
+  2  first_ONT_racon
+  5  second_Illumina_pilon
+  1  Analysis is finished.
+  2  Analysis is finished.
+  3  Analysis is finished.
+  5  Analysis is finished.
+  4  Analysis is finished.
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding option to enable it.
+
+2023-11-30 10:38:30
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 1: Creating Icarus viewers...
+Done
+
+2023-11-30 10:38:30
+RESULTS:
+  Text versions of total report are saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/report.html
+  Icarus (contig browser) is saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/icarus.html
+  Log saved to /scratch/jgianott/SAGE/SAGE_2023-2024/ashah1/ONT/01_Analysis/log/quast_after_polishing/quast.log
+
+Finished: 2023-11-30 10:38:30
+Elapsed time: 0:00:04.599064
+NOTICEs: 6; WARNINGs: 1; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
+-------2. Second check mapping
