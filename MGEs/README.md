@@ -7,7 +7,7 @@ This repository contains a set of scripts for annotating phages and plasmids in 
 Run the analysis for 411 genomes by listing assembly names and removing the file extension:
 
 `ls "/scratch/jgianott/SAGE/SAGE_2023-2024/common_files/SAGE2_DB/SAGE2_fna" > assembly_names.411_genomes.out
-sed 's/\.fna$//' assembly_names.411_genomes.out``
+sed 's/\.fna$//' assembly_names.411_genomes.out`
 
 ## **2. Running Genome Analysis**
 
