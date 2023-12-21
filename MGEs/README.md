@@ -4,15 +4,16 @@ This repository contains a set of scripts for annotating phages and plasmids in 
 
 ## **1. Storing Assembly Names**
 
-To store assembly names in a given directory, execute the following command:
+Run the analysis for 411 genomes by listing assembly names and removing the file extension:
 
-`ls "${common_files}/all_student_assemblies/assemblies" > assembly_names.out`
+`ls "/scratch/jgianott/SAGE/SAGE_2023-2024/common_files/SAGE2_DB/SAGE2_fna" > assembly_names.411_genomes.out
+sed 's/\.fna$//' assembly_names.411_genomes.out``
 
 ## **2. Running Genome Analysis**
 
 Run the genome analysis using the following script:
 
-`sbatch 01.00.identify_MGEs.sh`
+`sbatch 01.00.identify_MGEs.411_genomes.sh`
 
 ## **3. Merging Files**
 
@@ -30,10 +31,6 @@ indir=/scratch/jgianott/SAGE/SAGE_2023-2024/${username}/MGEs/01_genomad
 outfasta=/scratch/jgianott/SAGE/SAGE_2023-2024/${username}/MGEs/01_genomad/all_viruses.fasta
 cat ${indir}/*/*_summary/*_virus.fna > ${outfasta}`
 
-## **5. Running for 411 Genomes**
 
-Run the analysis for 411 genomes by listing assembly names and removing the file extension:
 
-`ls "/scratch/jgianott/SAGE/SAGE_2023-2024/common_files/SAGE2_DB/SAGE2_fna" > assembly_names.411_genomes.out
-sed 's/\.fna$//' assembly_names.411_genomes.out`
 
