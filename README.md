@@ -1,6 +1,8 @@
 # Genome Assembly
+[Report](https://docs.google.com/document/d/1Y8Xvi1zskJ0t4_dQ7_hZiesjV_4Q1x3hf27v3MwNhn8/edit?usp=sharing)  
 
 This repository contains data, scripts, and analysis results for the research project titled "Complete Genome Sequence of Acetobacteraceae Strain." The project involves the genome sequencing and analysis of a novel Bombella strain isolated from the gut microbiota of Geniotrigona thoracic stingless bees in Tenom, Malaysia.
+
 
 ## MGEs
 
